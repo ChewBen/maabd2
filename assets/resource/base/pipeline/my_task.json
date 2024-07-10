@@ -1,5 +1,101 @@
 {
-    "MyTask1": {},
-    "MyTask2": {},
-    "MyTask3": {}
+    "MyTask1": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "text": "主线",
+        "roi": [
+            1021,
+            107,
+            53,
+            36
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "MyTask2",
+            "MyTask3",
+            "MyTask4",
+            "MyTask5",
+            "MyTask6"
+        ]
+    },
+    "MyTask2": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "skip.png"
+        ],
+        "roi": [
+            [
+                1034,
+                30,
+                52,
+                42
+            ]
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "MyTask5"
+        ]
+    },
+    "MyTask3": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "text": "确认",
+        "roi": [
+            646,
+            530,
+            124,
+            47
+        ],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "MyTask4": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "text": "离开",
+        "roi": [
+            1015,
+            655,
+            179,
+            37
+        ],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "MyTask5": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "text": "确认",
+        "roi": [
+            645,
+            391,
+            126,
+            54
+        ],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "MyTask6": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "comfire.png"
+        ],
+        "roi": [
+            [
+                645,
+                391,
+                126,
+                54
+            ]
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "MyTask5"
+        ]
+    }
 }
