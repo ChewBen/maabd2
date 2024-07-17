@@ -1,5 +1,14 @@
 {
-    "MyTask1": {
+    "Maintask": {
+        "next": [
+            "MainClick",
+            "SkipClick",
+            "ShortConfirm",
+            "LongConfirm"
+        ],
+        "post_delay": 2000
+    },
+    "MainClick": {
         "is_sub": true,
         "recognition": "OCR",
         "text": "主线",
@@ -10,16 +19,12 @@
             36
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 2000,
         "next": [
-            "MyTask2",
-            "MyTask3",
-            "MyTask4",
-            "MyTask5",
-            "MyTask6"
+            "SkipClick"
         ]
     },
-    "MyTask2": {
+    "SkipClick": {
         "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
@@ -34,12 +39,13 @@
             ]
         ],
         "action": "Click",
-        "post_delay": 1000,
         "next": [
-            "MyTask5"
+            "ShortConfirm",
+            "LongConfirm",
+            "SkipClick"
         ]
     },
-    "MyTask3": {
+    "LongConfirm": {
         "is_sub": true,
         "recognition": "OCR",
         "text": "确认",
@@ -50,9 +56,13 @@
             47
         ],
         "action": "Click",
-        "post_delay": 1000
+        "post_delay": 2000,
+        "next": [
+            "MainClick",
+            "SkipClick"
+        ]
     },
-    "MyTask4": {
+    "LeaveButton": {
         "is_sub": true,
         "recognition": "OCR",
         "text": "离开",
@@ -63,9 +73,13 @@
             37
         ],
         "action": "Click",
-        "post_delay": 1000
+        "post_delay": 1000,
+        "next": [
+            "SkipClick",
+            "LongConfirm"
+        ]
     },
-    "MyTask5": {
+    "ShortConfirm": {
         "is_sub": true,
         "recognition": "OCR",
         "text": "确认",
@@ -76,26 +90,9 @@
             54
         ],
         "action": "Click",
-        "post_delay": 1000
-    },
-    "MyTask6": {
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "template": [
-            "comfire.png"
-        ],
-        "roi": [
-            [
-                645,
-                391,
-                126,
-                54
-            ]
-        ],
-        "action": "Click",
         "post_delay": 1000,
         "next": [
-            "MyTask5"
+            "LeaveButton"
         ]
     }
 }

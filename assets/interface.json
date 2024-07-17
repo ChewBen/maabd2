@@ -3,15 +3,6 @@
         {
             "name": "安卓端",
             "type": "Adb"
-        },
-        {
-            "name": "桌面端",
-            "type": "Win32",
-            "win32": {
-                "method": "Search",
-                "class_name": ".*",
-                "window_name": "Visual Studio"
-            }
         }
     ],
     "resource": [
@@ -20,19 +11,12 @@
             "path": [
                 "{PROJECT_DIR}/resource/base"
             ]
-        },
-        {
-            "name": "B 服",
-            "path": [
-                "{PROJECT_DIR}/resource/base",
-                "{PROJECT_DIR}/resource/bilibili"
-            ]
         }
     ],
     "task": [
         {
-            "name": "普通任务",
-            "entry": "MyTask1"
+            "name": "半自动主线",
+            "entry": "Maintask"
         },
         {
             "name": "选项任务",
